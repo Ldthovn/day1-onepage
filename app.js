@@ -1,4 +1,5 @@
 // ----------- Start Slider ---------------
+
 $(document).ready(function () {
   $(".voice__inner").slick({
     slidesToShow: 1,
@@ -53,7 +54,7 @@ function handleZoomImage(event) {
     /*html*/
     `
       <div class="featured__lightbox" id="lightbox">
-        <i class="fa-solid fa-xmark close-lightbox"></i>
+        <i class="fa-solid fa-xmark close-lightbox" onclick="handleClose()"></i>
         <div class="featured__lightbox-content">
           <img
           src="${image}"
@@ -65,29 +66,14 @@ function handleZoomImage(event) {
   `;
   document.body.insertAdjacentHTML("beforeend", template);
   document.getElementsByTagName("body")[0].style.overflow = "hidden";
-  
-  let iconClose = document.getElementsByClassName("close-lightbox")[0];
-  if (iconClose) {
-    iconClose.onclick = function () {
-      const modal = document.getElementById("lightbox");
-      console.log("modal", modal);
-      modal.style.display = "none";
-      document.getElementsByTagName("body")[0].style.overflow = "auto";
-    };
-  }
-  console.log("iconClose", iconClose);
 }
 
-// document.body.addEventListener("click", function (e) {
-//   if (e.target.matches(".featured__lightbox")) {
-//     // Remove lightbox out of dom
-//     const close = document.querySelector(".close-lightbox");
-//     close.addEventListener("click", function () {
-//       e.target.parentNode.removeChild(e.target);
-//       document.getElementsByTagName("body")[0].style.overflow = "auto";
-//     });
-//   }
-// });
+function handleClose() {
+  const lightbox = document.getElementById("lightbox");
+  lightbox.parentNode.removeChild(lightbox);
+  document.getElementsByTagName("body")[0].style.overflow = "auto";
+  console.log("lightbox", lightbox);
+}
 
 // Load more
 
@@ -121,12 +107,12 @@ document.getElementById("headerMobile").addEventListener("click", () => {
 
 //  ------------ Start Video --------------
 
-const theURL = document.getElementById("myVideo").getAttribute("src");
-const iframeTag = document.querySelector("iframe");
-const win = iframeTag.contentWindow;
-
-function handleVideo() {
-  win.postMessage("playVideo", theURL);
-}
+const video = document.getElementById("myVideo");
+video.onpause = function () {
+  document.getElementsByClassName("play-video")[0].style.display = "block";
+};
+video.onplay = function () {
+  document.getElementsByClassName("play-video")[0].style.display = "none";
+};
 
 //  ------------ End Video --------------

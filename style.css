@@ -333,10 +333,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* display: none; */
 }
 
 .close-lightbox {
-  color: #000;
+  color: #9f9f9f;
   font-size: 5rem;
   position: absolute;
   top: 2rem;
@@ -421,6 +422,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #10c9c3;
+  transition: color 0.25s linear;
+}
+
+.controls:hover {
+  color: #99f8f5;
 }
 
 /* --------End our work process -------- */
@@ -798,7 +804,7 @@ textarea {
   /* Our work process */
 
   .our-work-video {
-    height: 35rem;
+    height: auto;
     width: 80%;
   }
 
@@ -832,6 +838,10 @@ textarea {
     cursor: pointer;
     border: none;
     outline: none;
+  }
+
+  .controls .play-video {
+    font-size: 6rem !important;
   }
 
   .voice__inner .slick-dots .slick-active button {
@@ -966,6 +976,10 @@ textarea {
   .our-work-video {
     height: auto;
     width: 100%;
+  }
+
+  .controls .play-video {
+    font-size: 4rem !important;
   }
 
   .technology-item {
