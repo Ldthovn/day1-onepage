@@ -4,7 +4,6 @@ $(document).ready(function () {
   $(".voice__inner").slick({
     slidesToShow: 1,
     dots: true,
-    centerMode: true,
     arrows: false,
     infinite: true,
   });
@@ -15,7 +14,6 @@ $(document).ready(function () {
     slidesToShow: 5,
     slidesToScroll: 2,
     dots: false,
-    centerMode: true,
     arrows: false,
     infinite: true,
     responsive: [

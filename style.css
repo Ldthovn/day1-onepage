@@ -186,8 +186,8 @@ body {
 .skills__process-design,
 .skills__process-web,
 .skills__process-marketing {
-  width: 100%;
-  height: 4px;
+  width: 50rem;
+  height: 3px;
   background-color: #e9e9e9;
   position: relative;
 }
@@ -472,6 +472,7 @@ body {
   line-height: 1.5;
   color: #787878;
   text-align: center;
+  height: 100%;
 }
 
 .technology-item:nth-child(4n) {
@@ -649,7 +650,7 @@ textarea {
 
 /* --------Start Footer -------- */
 .footer {
-  padding: 4rem 0;
+  padding: 7.5rem 0;
   background-color: #000;
   color: #fff;
 }
@@ -744,6 +745,31 @@ textarea {
   display: none;
 }
 
+@media (max-width: 1200px) {
+  .our-work-video {
+    max-width: 90% !important;
+    height: auto !important;
+  }
+
+  .skills__process {
+    width: 100%;
+  }
+
+  .skills__process-design,
+  .skills__process-web,
+  .skills__process-marketing {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner__image,
+  .skills__image {
+    width: 40rem;
+    height: 40rem;
+  }
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 3rem;
@@ -779,6 +805,10 @@ textarea {
     height: 30rem;
   }
 
+  .footer-name-copy-right {
+    text-align: center;
+  }
+
   /* Elementor */
   .elementor-item__icon {
     margin-right: 1.5rem;
@@ -804,8 +834,7 @@ textarea {
   /* Our work process */
 
   .our-work-video {
-    height: auto;
-    width: 80%;
+    width: 100% !important;
   }
 
   /* Voice */
@@ -898,17 +927,11 @@ textarea {
   /* Technology */
 
   .technology-item {
-    width: 28%;
-    margin-right: 8%;
-    margin-bottom: 8%;
+    width: 48%;
+    margin-right: 4%;
   }
 
-  .technology-item:nth-child(4n) {
-    margin-right: 8%;
-    margin-bottom: 8%;
-  }
-
-  .technology-item:nth-child(3n) {
+  .technology-item:nth-child(2n) {
     margin-right: 0;
   }
 
@@ -980,18 +1003,6 @@ textarea {
 
   .controls .play-video {
     font-size: 4rem !important;
-  }
-
-  .technology-item {
-    width: 48%;
-    margin-right: 4%;
-  }
-
-  .technology-item:nth-child(2n) {
-    margin-right: 0;
-  }
-  .technology-item:nth-child(3n) {
-    margin-right: 0;
   }
 
   .voice-content {
